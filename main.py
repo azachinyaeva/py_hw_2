@@ -31,7 +31,7 @@ def get_shop_list_by_dishes(dishes, person_count):
             if ing_name in shop_list:
                 shop_list[ing_name]["quantity"] += int(i["quantity"]) * person_count
             else:
-                shop_list[ing_name] = {"quantity": int(i["quantity"]) * person_count, "measure": i["measure"]}
+                shop_list[ing_name] = {"measure": i["measure"].strip(), "quantity": int(i["quantity"]) * person_count}
     return shop_list
 
 
